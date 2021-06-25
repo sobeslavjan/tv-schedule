@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e88feba1860db60bcdef7d1dce354cb1",
+    "content-hash": "59e69d070fe9ff840d25a12f0a982247",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -117,6 +117,69 @@
                 }
             ],
             "time": "2021-01-20T22:51:39+00:00"
+        },
+        {
+            "name": "consistence-community/consistence",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/consistence-community/consistence.git",
+                "reference": "0c39f547d2607521bc383763d659e71ee7ed82c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/consistence-community/consistence/zipball/0c39f547d2607521bc383763d659e71ee7ed82c3",
+                "reference": "0c39f547d2607521bc383763d659e71ee7ed82c3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~7.4 || ~8.0"
+            },
+            "replace": {
+                "consistence/consistence": "2.*"
+            },
+            "require-dev": {
+                "consistence-community/coding-standard": "3.11.0",
+                "phing/phing": "2.16.4",
+                "php-parallel-lint/php-parallel-lint": "1.2.0",
+                "phpunit/phpunit": "9.5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Consistence\\": [
+                        "src"
+                    ]
+                },
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vašek Purchart",
+                    "email": "me@vasekpurchart.cz",
+                    "homepage": "http://vasekpurchart.cz"
+                }
+            ],
+            "description": "Consistence - consistent approach and additions to PHP's functionality",
+            "keywords": [
+                "array",
+                "check",
+                "enum",
+                "format",
+                "strict",
+                "time",
+                "type"
+            ],
+            "support": {
+                "source": "https://github.com/consistence-community/consistence/tree/2.1.1"
+            },
+            "time": "2021-02-28T09:38:35+00:00"
         },
         {
             "name": "doctrine/inflector",
