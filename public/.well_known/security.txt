@@ -1,0 +1,3 @@
+Contact: https://test.orange.sk
+Contact: mailto:jan.sobeslav@test.orange.sk
+Preferred-Languages: cs,en
