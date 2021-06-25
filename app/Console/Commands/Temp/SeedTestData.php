@@ -3,6 +3,7 @@
 namespace App\Console\Commands\Temp;
 
 use App\Models\Entities\Film;
+use App\Models\Entities\ScheduleEntry;
 use Illuminate\Console\Command;
 
 class SeedTestData extends Command
@@ -29,7 +30,8 @@ class SeedTestData extends Command
 	 */
 	public function handle()
 	{
-		Film::factory()->create();
+		Film::factory()->count(40)->create();
+		ScheduleEntry::factory()->count(120)->create();
 
 		return 0;
 	}
