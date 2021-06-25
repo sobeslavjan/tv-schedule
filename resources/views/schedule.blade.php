@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container" id="schedule">
 
         <h1>TV schedule</h1>
 
@@ -16,14 +16,15 @@
 
                     @foreach($schedule['entries'] as $scheduleEntryIndex => $scheduleEntry)
 
-                        {{ $scheduleEntry->film->title }}
-                        <br/>
-                        {{$scheduleEntry->start_at}}
-                        <br/>
-                        {{$scheduleEntry->end_at}}
-                        <br/>
-                        <br/>
+                        <article>
+                            <h3>{{ $scheduleEntry->film->title }} </h3>
+                            <span class="badge badge-primary">{{$scheduleEntry->film->type}}</span>
 
+                            <span class="start_at">{{$scheduleEntry->start_at->format('H:i')}}</span>
+                            -
+                            <span class="start_at">{{$scheduleEntry->end_at->format('H:i')}}</span>
+
+                        </article>
                     @endforeach
 
                 </div>

@@ -10849,3 +10849,9 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+#schedule article {
+  margin-bottom: 1em;
+}
+#schedule article h3, #schedule article .h3 {
+  font-size: 1.1em;
+}

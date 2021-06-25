@@ -1,3 +1,14 @@
 // Variables & mixins
 @import 'variables';
 @import '~bootstrap/scss/bootstrap';
+
+
+#schedule {
+  article {
+    margin-bottom: 1em;
+
+    h3 {
+      font-size: 1.1em;
+    }
+  }
+}
