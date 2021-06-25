@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Entities\ScheduleEntry;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
+use Illuminate\Contracts\View\View;
 
 class ScheduleController extends Controller
 {
@@ -15,7 +15,10 @@ class ScheduleController extends Controller
 	/** @var int SCHEDULE_DAY_LENGTH How many hours should there be in a day. */
 	protected const SCHEDULE_DAY_LENGTH = 28;
 
-	public function __invoke(Request $request)
+	/**
+	 * @return View
+	 */
+	public function __invoke(): View
 	{
 		$dailySchedules = [];
 
