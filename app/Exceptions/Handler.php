@@ -7,13 +7,14 @@ use Throwable;
 
 class Handler extends ExceptionHandler
 {
+
 	/**
 	 * A list of the exception types that are not reported.
 	 *
 	 * @var array
 	 */
 	protected $dontReport = [
-			];
+	];
 
 	/**
 	 * A list of the inputs that are never flashed for validation exceptions.
@@ -30,10 +31,12 @@ class Handler extends ExceptionHandler
 	 * Register the exception handling callbacks for the application.
 	 *
 	 * @return void
+	 *
+	 * @SuppressWarnings(PHPMD.UnusedFormalParameter)
 	 */
 	public function register()
 	{
-		$this->reportable(function (Throwable $e) {
+		$this->reportable(function (Throwable $exception) {
 		});
 	}
 }
