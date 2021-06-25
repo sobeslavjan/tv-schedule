@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<ruleset name="MyStandard">
+    <description>PSR2 with tabs instead of spaces plus customized rules</description>
+
+    <!-- USE TABS-->
+    <arg name="tab-width" value="4"/>
+    <rule ref="PSR2">
+        <exclude name="Generic.WhiteSpace.DisallowTabIndent"/>
+    </rule>
+    <rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
+    <rule ref="Generic.WhiteSpace.ScopeIndent">
+        <properties>
+            <property name="indent" value="4"/>
+            <property name="tabIndent" value="true"/>
+        </properties>
+    </rule>
+
+    <!-- EOL -->
+    <rule ref="Generic.Files.LineEndings">
+        <properties>
+            <property name="eolChar" value="\n"/>
+        </properties>
+    </rule>
+
+    <!-- LINE LENGTH -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="255"/>
+            <property name="absoluteLineLimit" value="0"/>
+        </properties>
+    </rule>
+
+    <!-- DOCBLOCKS -->
+    <rule ref="Squiz.Commenting.BlockComment"/>
+    <rule ref="Squiz.Commenting.BlockComment.WrongStart">
+        <severity>0</severity>
+    </rule>
+
+    <!-- variables needs comments -->
+    <rule ref="Squiz.Commenting.VariableComment"/>
+
+    <!-- functions need comments and typehints -->
+    <rule ref="Squiz.Commenting.FunctionComment"/>
+    <rule ref="Squiz.Commenting.FunctionComment.MissingParamComment">
+        <!-- the function parameters do not need comments -->
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Commenting.FunctionComment.ScalarTypeHintMisssing"/>
+
+
+    <rule ref="Squiz.Commenting.FunctionComment.EmptyThrows">
+        <rule ref="Squiz.Commenting.FunctionCommentThrowTag"/>
+        <severity>0</severity>
+    </rule>
+    <rule ref="Squiz.Commenting.FunctionCommentThrowTag.WrongNumber">
+        <severity>0</severity>
+    </rule>
+
+    <!-- classes do not need comments -->
+    <rule ref="Squiz.Commenting.ClassComment">
+        <severity>0</severity>
+    </rule>
+
+    <!-- require propper formatting of inline comments -->
+    <rule ref="Squiz.Commenting.InlineComment"/>
+    <rule ref="Squiz.Commenting.InlineComment.DocBlock">
+        <!-- allow inline docblocks-->
+        <severity>0</severity>
+    </rule>
+
+    <!-- prevent other possible errors -->
+    <rule ref="Generic.PHP.ForbiddenFunctions"/>
+    <rule ref="Generic.PHP.NoSilencedErrors"/>
+</ruleset>
