@@ -20,5 +20,4 @@ class Film extends Model
 		'title',
 		'type',
 	];
-
 }

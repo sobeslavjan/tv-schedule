@@ -38,5 +38,4 @@ class ScheduleEntry extends Model
 		'start_at' => 'datetime',
 		'end_at'   => 'datetime',
 	];
-
 }
