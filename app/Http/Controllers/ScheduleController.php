@@ -9,18 +9,28 @@ use Illuminate\Http\Request;
 class ScheduleController extends Controller
 {
 
+	/** @var int DAYS_PER_PAGE How many days should be displayed on a single page. */
+	protected const DAYS_PER_PAGE = 5;
+
+	/** @var int SCHEDULE_DAY_LENGTH How many hours should there be in a day. */
+	protected const SCHEDULE_DAY_LENGTH = 28;
+
 	public function __invoke(Request $request)
 	{
-		$days           = 5;
 		$dailySchedules = [];
 
-		for ($day = 0; $day < 5; $day++) {
-			$dayStart = Carbon::now()->startOfDay()->addDays($day);
+		for ($dayIndex = 0; $dayIndex < static::DAYS_PER_PAGE; $dayIndex++) {
+			$dayStart = Carbon::now()->startOfDay()->addDays($dayIndex);
 
-			$dailySchedules[$day] = ScheduleEntry::where('start_at', '>=', $dayStart)
-				->where('end_at', '<=', $dayStart->clone()->addHours(28))
-				->with('film')
-				->get();
+			// @todo Use DTO.
+			$dailySchedules[$dayIndex] = [
+				'day'     => $dayStart,
+				'entries' => ScheduleEntry::where('start_at', '>=', $dayStart)
+					->where('end_at', '<=', $dayStart->clone()->addHours(static::SCHEDULE_DAY_LENGTH))
+					->orderBy('start_at')
+					->with('film')
+					->get(),
+			];
 		}
 
 		return view('schedule', [
