@@ -5,6 +5,7 @@ namespace App\Models\Entities;
 use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ScheduleEntry extends Model
 {
@@ -38,4 +39,14 @@ class ScheduleEntry extends Model
 		'start_at' => 'datetime',
 		'end_at'   => 'datetime',
 	];
+
+	/**
+	 * Film relationship.
+	 *
+	 * @return BelongsTo
+	 */
+	public function film(): BelongsTo
+	{
+		return $this->belongsTo(Film::class);
+	}
 }
